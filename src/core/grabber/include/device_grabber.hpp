@@ -256,11 +256,13 @@ private:
   }
 
   bool is_target_device(IOHIDDeviceRef _Nonnull device) {
+#if 0
     // Skip devices which have keyboard and mouse usage.
     if (IOHIDDeviceConformsTo(device, kHIDPage_GenericDesktop, kHIDUsage_GD_Pointer) ||
         IOHIDDeviceConformsTo(device, kHIDPage_GenericDesktop, kHIDUsage_GD_Mouse)) {
       return false;
     }
+#endif
     return true;
   }
 
